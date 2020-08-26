@@ -1,0 +1,24 @@
+﻿enclave {
+    trusted {
+        /* define ECALLs here. */
+	include "circuit.h"
+	include "garbledcircuit.h"	
+	public void init(int no_of_clients);
+	public void passInput([in,size=len] char *input,size_t len);
+	public void getGCircuit([out,size=len] char *input,size_t len);
+	public void passGoutput([in,size=len] char *input,size_t len);
+	public void passProgram([in,size=len] char *input,size_t len);
+	public void getOutputFromEnclave([out,size=len] char *output_message,int client_id,size_t len);
+	public void freeEnc();
+
+	//public void freeMem();
+
+    };
+
+    untrusted {
+        /* define OCALLs here. */
+	include "circuit.h"
+        void ocall_print_string([in, string] const char *str);
+	//void passGProgram([in,size=len] char *input,size_t len);
+    };
+};

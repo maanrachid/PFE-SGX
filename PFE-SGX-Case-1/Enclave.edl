@@ -1,0 +1,27 @@
+﻿enclave {
+    trusted {
+        /* define ECALLs here. */
+
+	include "circuit.h"
+	public void init(int no_of_clients);
+	public void passInput([in,size=len] char *input,size_t len); 
+	public void passCircuit([in,size=len] Circuit *input,size_t len);
+	public void getOutputFromEnclave([out,size=len] char *output_message,int client_id,size_t len);
+
+	// pass the input array to enclave
+	//public void passAllValues([in, size=len] Block *input,size_t len);
+
+
+	// get the input array from enclave
+	//public void getAllValues([out, size=len] Block *input,size_t len);
+
+	//public void freeMem();
+	//public void reSetComCounter();
+    };
+
+    untrusted {
+        /* define OCALLs here. */
+	include "circuit.h"
+        void ocall_print_string([in, string] const char *str);	
+    };
+};

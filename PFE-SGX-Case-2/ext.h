@@ -1,0 +1,2 @@
+#define PROGLIMIT 30000
+#define BUFSIZE 10000
