@@ -22,6 +22,11 @@ https://01.org
 This will create a new bin file in linux/installer/bin
 
 
+IPP should be installed for encryption and decryption
+of the communication between the clients and the enclave.
+
+
+
 Compiling SGX PFE
 -----------------
 
@@ -125,6 +130,24 @@ input0.txt will have a 32 numbers (ones and zeros). To generate an input for 100
 Number of clients (data owners)
 ------------------------------
 you can run as many data owners (clients) as you want, but the input size should be divisible by their count. You have only one program owner. 
+
+
+Encryption & Decryption
+-----------------------
+Encryption is done using IPP. IPP has 2 versions: ONE for the enclave, and ONE for the untrusted code.
+
+
+- IMPORTANT: make sure that all pathes for the IPP library are correct in the makefile:
+
+IPPinc is the path of the header files (used by untrusted code)
+IPPPath is the path of the library to be used (used by untrusted code)
+IPP_LIB_Client is the name of the library to be used (used by untrusted code)
+IPP_LIB_Enclave is the name of the library used (sgx_tcrypto)
+
+
+
+You can also implement your own encryption and use it. For testing, we were using simple xor.
+
 
 
 
