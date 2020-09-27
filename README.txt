@@ -167,6 +167,18 @@ if you have any question, please email:
 
 Maan Haj Rachid
 maanhajrachid@hotmail.com
+
+
+Publication
+------------
+Omar Abou Selo, Maan Haj Rachid, Abdullatif Shikfa, Yongge Wang, Qutaibah Malluhi, "Private Function Evaluation Using Intel’s SGX", Security and Communication Networks, vol. 2020, Article ID 3042642, 10 pages, 2020. 
+
+https://doi.org/10.1155/2020/3042642
+https://www.hindawi.com/journals/scn/2020/3042642/
+
+
+
+
  
 
 
